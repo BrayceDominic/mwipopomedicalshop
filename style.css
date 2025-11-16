@@ -13,7 +13,7 @@ body {
 /* Hero */
 .hero {
     background: linear-gradient(rgba(0, 102, 204, 0.7), rgba(0, 102, 204, 0.3)),
-        url(../img/pexels-suzyhazelwood-3652092.jpg) center/cover no-repeat;
+        url(pexels-suzyhazelwood-3652092.jpg) center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -415,4 +415,5 @@ footer {
         text-align: left;
         border: none;
     }
+
 }

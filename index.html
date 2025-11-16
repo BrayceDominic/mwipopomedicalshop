@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mwipopo Medical Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* =======================
+        RESPONSIVE HEADER
+        ======================= */
+        .main-header {
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .container-header {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .logo .m1 {
+            color: red;
+        }
+
+        .logo .m2 {
+            color: rgb(24, 110, 139);
+        }
+
+        /* NAV MENU */
+        .navmenu ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navmenu ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #0066cc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            padding: 5px 8px;
+            border-radius: 6px;
+        }
+
+        .navmenu ul li a:hover,
+        .navmenu ul li a.active {
+            color: red;
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        /* MOBILE ICON */
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #0066cc;
+            margin-left: 10px;
+        }
+
+        /* =======================
+        MOBILE RESPONSIVE
+        ======================= */
+        @media (max-width: 991px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .navmenu {
+                position: absolute;
+                top: 75px;
+                right: 20px;
+                background: #ffffff;
+                width: 240px;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+                display: none;
+            }
+
+            .navmenu ul {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .navmenu.active {
+                display: block;
+                animation: fadeIn 0.3s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        /* ============================
+   ICON FIX + ANIMATIONS
+============================ */
+
+        /* Fix invisible email icon in contact section */
+        .contact-box a i {
+            color: #0066cc !important;
+        }
+
+        /* About feature card animation */
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Icon animation */
+        .feature-card i,
+        .contact-box i,
+        .navmenu ul li a i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .feature-card:hover i {
+            transform: scale(1.2);
+            color: #0066cc;
+        }
+
+        /* Header icon hover interaction */
+        .navmenu ul li a:hover i {
+            transform: scale(1.1);
+            color: red;
+        }
+
+        /* Contact icons animation */
+        .contact-box a i:hover {
+            transform: scale(1.3);
+        }
+
+        /* FORCE ALL FONT AWESOME ICONS TO ALWAYS BE VISIBLE */
+        i.fas,
+        i.fab,
+        i.fa-solid,
+        i.fa {
+            color: #0066cc !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* FIX WHITE EMAIL ICON IN CONTACT SECTION */
+        .contact-box a i {
+            color: #0066cc !important;
+        }
+
+        /* FIX FEATURE CARD ICONS IN ABOUT SECTION */
+        .feature-card i {
+            color: #0066cc !important;
+        }
+
+        /* FINAL FIX – FORCE ICONS TO SHOW IN ABOUT & CONTACT */
+        #about i,
+        .contact-box i,
+        .about-features i {
+            color: #0066cc !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline-block !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CLEAN RESPONSIVE HEADER -->
+    <header class="main-header">
+        <div class="container-header">
+            <a href="#home" class="logo">
+                Mwipopo <span class="m1">Medical</span> <span class="m2">Shop</span>
+            </a>
+
+            <nav class="navmenu" id="navmenu">
+                <ul>
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#services"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <i class="mobile-nav-toggle fas fa-bars" id="mobileToggle"></i>
+        </div>
+    </header>
+
+
+    <!-- EVERYTHING BELOW IS UNTOUCHED -->
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome To Mwipopo Medical Shop</h1><br>
+            <h3>Your Health, Our Priority</h3><br>
+            <p>Trusted care and genuine medicines delivered with compassion and professionalism.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>At Mwipopo Medical Shop, we’re more than a medical shop, we’re your partner in health. From personalized
+                consultations to rapid home delivery, we combine care, expertise, and technology to make healthcare
+                accessible and reliable for everyone.</p>
+
+            <div class="about-features">
+                <div class="feature-card">
+                    <i class="fas fa-user-md fa-2x"></i>
+                    <h3>Experts</h3>
+                    <p>Our certified professionals provide guidance tailored to your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pills fa-2x"></i>
+                    <h3>Authentic Medicines</h3>
+                    <p>We ensure every product meets the highest standards of quality.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heartbeat fa-2x"></i>
+                    <h3>Compassionate Care</h3>
+                    <p>We care about your health journey as much as you do.</p>
+                </div>
+            </div>
+
+            <p class="about-cta">Join the thousands of happy customers who trust Mwipopo Medical Shop for reliable,
+                compassionate, and innovative healthcare solutions.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="card">
+                <img src="img/pexels-polina-tankilevitch-3873150.jpg" alt="Medicines">
+                <h3>Medicine Supply</h3>
+                <p>We provide a wide range of authentic prescription and non-prescription medicines.</p>
+            </div>
+            <div class="card">
+                <img src="img/pexels-ivan-samkov-4989175.jpg" alt="Consultation">
+                <h3>Medical Consultation</h3>
+                <p>Talk to certified experts for guidance on your prescriptions and treatments.</p>
+            </div>
+            <div class="card">
+                <img src="img/pexels-christina99999-30336149.jpg" alt="Delivery">
+                <h3>Home Delivery</h3>
+                <p>Fast and secure delivery of your medicines right to your doorstep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+
+            <p><i class="fas fa-map-marker-alt"></i> Zizi la Ng'ombe, Isakalilo, Iringa, Tanzania</p>
+            <p><i class="fas fa-phone"></i> +255 762 055 860</p>
+            <p><i class="fas fa-envelope"></i> mwipopopatrick@gmail.com</p>
+
+            <!-- BUTTONS -->
+            <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/255762055860" target="_blank"
+                    style="font-size:28px; color:#25D366; text-decoration:none;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:mwipopopatrick@gmail.com" style="font-size:28px; color:#fff; text-decoration:none;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <!-- GOOGLE MAP -->
+            <div style="margin-top:25px;">
+                <iframe
+                    src="https://www.google.com/maps?q=Zizi%20la%20Ng'ombe,%20Isakalilo,%20Iringa,%20Tanzania&output=embed"
+                    width="100%" height="350" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Mwipopo Medical Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById("mobileToggle");
+        const navmenu = document.getElementById("navmenu");
+
+        mobileToggle.addEventListener("click", () => {
+            navmenu.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
